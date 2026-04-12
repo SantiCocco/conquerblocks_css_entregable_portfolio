@@ -1,0 +1,75 @@
+.hero {
+  background-image: url("../img/stacked_circles_left.svg"), url("../img/circle.svg");
+  background-repeat: no-repeat;
+  background-position: left 0px top 25%, right 0px top 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 80px;
+  @include breakpoint(tablet) {
+    flex-direction:row-reverse;
+    align-items: flex-end;
+    text-align: start;
+    margin-bottom: 60px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-left: 32px;
+    @include breakpoint(tablet) {
+          position: relative;
+          margin-right: -50px;
+          gap: 0px;
+        }
+    .button {
+      align-self: center;
+      @include breakpoint(tablet) {
+          align-self:flex-start;
+        }
+    }
+  }
+  &__title {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: -1.14px;
+      margin-top: 16px;
+      .tablet-break {
+        display: none;
+        @include breakpoint(tablet) {
+          display: block;  
+        }
+        @include breakpoint(desktop) {
+          display: none;
+        }
+      }
+      @include breakpoint(tablet) {
+        font-size: 72px;
+        line-height: 72px;
+        letter-spacing: -2.05px;
+      }
+      span {
+        background-image: linear-gradient($green, $green);
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size: 100% 4px;
+      }
+  }
+  &__subtitle {
+    color: $light-gray;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: 0px;
+      padding: 0 32px;
+      @include breakpoint(tablet) {
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: 60px;
+        margin-bottom: 34px;
+        padding: 0px 45px 0px 0px;
+      }
+  } 
+}

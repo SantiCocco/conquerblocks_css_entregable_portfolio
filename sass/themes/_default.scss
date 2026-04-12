@@ -1,7 +1,9 @@
 html * {
-    font-family: $roboto-font;
+    font-family: $primary-font;
 }
- 
+
 body {
     overflow-x: hidden;
+    background-color: $black;
+    color: $white;
 } 
