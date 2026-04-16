@@ -3,14 +3,43 @@
   background-repeat: no-repeat;
   background-position: left 0px bottom 18%;
   background-color: $charcoal;
-  padding: 60px 16px 87px 16px;
-  text-align: center;
+  @include breakpoint(tablet) {
+    background-position: left 0px bottom 5%;
+  }
+  @include breakpoint(desktop) {
+    background-position: left 0px bottom 18%;
+  }
+  .container{
+    padding: 60px 16px 87px 16px;
+    text-align: center;
+    @include breakpoint(tablet) {
+      background-position: left 0px bottom 5%;
+      padding: 60px 160px 90px 160px;
+    }
+    @include breakpoint(desktop) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 220px;
+      padding: 85px 0px;
+    }
+  }
+  &__header {
+    padding: 0px 16px;
+    @include breakpoint(tablet) {
+      text-align: start;
+    }
+  }
   &__title {
     font-size: 40px;
     font-weight: 700;
     line-height: 40px;
     letter-spacing: -1.14px;
     margin-bottom: 20px;
+    @include breakpoint(tablet) {
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -2.05px;
+    } 
   }
   &__description {
     color: $light-gray;
@@ -18,8 +47,11 @@
     font-weight: 400;
     line-height: 26px;
     letter-spacing: 0px;
-    padding: 0px 16px;
     margin-bottom: 50px;
+    @include breakpoint(tablet) {
+      font-size: 18px;
+      line-height: 28px;
+    } 
   }
   &__form {
     display: flex;

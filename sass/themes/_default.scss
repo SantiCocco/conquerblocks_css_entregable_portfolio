@@ -3,7 +3,16 @@ html * {
 }
 
 body {
-    overflow-x: hidden;
     background-color: $black;
     color: $white;
+    align-items: center;
+    .container {
+      max-width: $max-width;
+      margin: 0 auto;
+    }
 } 
+
+.social-link :hover {
+  color: $green;
+}
+

@@ -3,6 +3,9 @@ body>header {
   top: 0;
   left: 0;
   width: 100%;
+}
+
+body>header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,14 +26,17 @@ body>header {
     @include reset-list();
     display: flex;
     gap: 25px;
+    @include breakpoint(tablet) {
+      gap: 32px;
+    }
     svg {
       width: 19px;
       height: 19px;
       color: $white;
       @include breakpoint(tablet) {
-      width: 24px;
-      height: 24px;
-    }
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 }

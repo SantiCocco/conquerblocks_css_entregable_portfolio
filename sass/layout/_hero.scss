@@ -2,27 +2,64 @@
   background-image: url("../img/stacked_circles_left.svg"), url("../img/circle.svg");
   background-repeat: no-repeat;
   background-position: left 0px top 25%, right 0px top 45%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 80px;
   @include breakpoint(tablet) {
-    flex-direction:row-reverse;
-    align-items: flex-end;
-    text-align: start;
-    margin-bottom: 60px;
+    background-image: url("../img/stacked_circles_left.svg");
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0%;
+      top: 46%;
+      width: 64px;
+      height: 129px;
+      background: url("../img/circle.svg") no-repeat;
+    }
+  }
+  @include breakpoint(desktop) {
+    background-image: url("../img/desktop-stacked-circles.svg");
+    background-position: left 0px top 20%;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 38%;
+      width: 129px;
+      height: 129px;
+      background: url("../img/desktop-circle.svg") no-repeat;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+    @include breakpoint(tablet) {
+      flex-direction:row-reverse;
+      align-items: flex-end;
+      text-align: start;
+      margin-bottom: 60px;
+      background-position: left 0px top 20%, right 0px top 45%;
+    }
+    @include breakpoint(desktop) {
+      align-items: center;
+    }
   }
   &__content {
     display: flex;
     flex-direction: column;
+    padding: 0px 16px;
     gap: 24px;
-    padding-left: 32px;
     @include breakpoint(tablet) {
-          position: relative;
-          margin-right: -50px;
-          gap: 0px;
-        }
+      position: relative;
+      margin-right: -50px;
+      margin-left: 16px;
+      gap: 0px;
+    }
+    @include breakpoint(desktop) {
+      padding: 0px 16px 0px 0px;
+      margin-right: -60px;
+      margin-left: 0px;
+    }
     .button {
       align-self: center;
       @include breakpoint(tablet) {
@@ -50,11 +87,19 @@
         line-height: 72px;
         letter-spacing: -2.05px;
       }
+      @include breakpoint(desktop) {
+        font-size: 88px;
+        line-height: 88px;
+        letter-spacing: -2.5px;
+      }
       span {
         background-image: linear-gradient($green, $green);
         background-repeat: no-repeat;
         background-position: 0 100%;
         background-size: 100% 4px;
+        @include breakpoint(tablet) {
+          background-size: 100% 6px;
+        }
       }
   }
   &__subtitle {
@@ -63,13 +108,18 @@
       font-weight: 400;
       line-height: 26px;
       letter-spacing: 0px;
-      padding: 0 32px;
+      padding: 0 16px;
       @include breakpoint(tablet) {
         font-size: 18px;
         line-height: 28px;
         margin-top: 60px;
         margin-bottom: 34px;
-        padding: 0px 45px 0px 0px;
+        padding: 0px;
+      }
+      @include breakpoint(desktop) {
+        margin-top: 43px;
+        margin-bottom: 66px;
+        padding-right: 261px;
       }
   } 
 }
